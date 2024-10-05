@@ -6,7 +6,11 @@ export default $config({
             name: "notes",
             removal: input?.stage === "production" ? "retain" : "remove",
             home: "aws",
-            region: "eu-north-1",
+            providers: {
+                aws: {
+                    region: "eu-north-1",
+                },
+            },
         };
     },
     async run() {
